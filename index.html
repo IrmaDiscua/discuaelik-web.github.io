@@ -187,6 +187,61 @@ button { cursor: pointer; }
 .settings-row b { color: var(--muted); font-size: 22px; }
 .settings-row.danger strong { color: #c63b6f; }
 .toast { position: fixed; z-index: 90; left: 50%; transform: translateX(-50%); bottom: calc(92px + env(safe-area-inset-bottom)); background: #2d2940; color: white; padding: 12px 17px; border-radius: 15px; box-shadow: var(--shadow); font-size: 13px; max-width: calc(100% - 36px); text-align: center; }
+
+/* Vestidor digital */
+.tryon-button { grid-column: 1 / -1; border: 0; border-radius: 18px; padding: 14px 17px; font-weight: 900; background: linear-gradient(135deg, #8f73ff, #ff66b3); color: white; box-shadow: 0 10px 22px rgba(155,124,255,.24); }
+.avatar-page { display: grid; gap: 15px; }
+.avatar-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.avatar-back { border: 0; border-radius: 14px; background: white; color: var(--pink-dark); padding: 10px 13px; font-weight: 850; box-shadow: 0 5px 14px rgba(90,44,92,.08); }
+.avatar-card { background: linear-gradient(160deg,#fff,#f1ebff); border: 1px solid var(--line); border-radius: 31px; padding: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.mannequin-canvas { position: relative; width: min(100%, 350px); height: 555px; margin: 0 auto; border-radius: 28px; overflow: hidden; background: radial-gradient(circle at 50% 22%, rgba(255,255,255,.95), rgba(255,229,244,.78) 44%, rgba(231,225,255,.92)); border: 1px solid rgba(255,255,255,.86); }
+.mannequin-canvas::before { content: ""; position: absolute; inset: 18px; border: 1px dashed rgba(155,124,255,.22); border-radius: 23px; }
+.avatar-shadow { position:absolute; width:180px; height:28px; left:50%; bottom:16px; transform:translateX(-50%); border-radius:50%; background:rgba(69,44,78,.12); filter:blur(4px); }
+.avatar-head { position:absolute; z-index:3; left:50%; top:43px; transform:translateX(-50%); width:78px; height:92px; border-radius:45% 45% 48% 48%; background:var(--skin); box-shadow:inset 0 -5px 0 rgba(91,48,45,.06); }
+.avatar-neck { position:absolute; z-index:2; left:50%; top:125px; transform:translateX(-50%); width:31px; height:37px; border-radius:10px; background:var(--skin); }
+.avatar-ear { position:absolute; z-index:2; top:76px; width:15px; height:26px; border-radius:50%; background:var(--skin); }
+.avatar-ear.left { left:calc(50% - 46px); } .avatar-ear.right { right:calc(50% - 46px); }
+.avatar-face::before, .avatar-face::after { content:""; position:absolute; z-index:5; top:85px; width:7px; height:3px; border-radius:50%; background:#493641; }
+.avatar-face::before { left:calc(50% - 22px); } .avatar-face::after { right:calc(50% - 22px); }
+.avatar-mouth { position:absolute; z-index:5; top:108px; left:50%; width:17px; height:7px; transform:translateX(-50%); border-bottom:2px solid #b15b76; border-radius:50%; }
+.avatar-torso { position:absolute; z-index:1; left:50%; top:151px; transform:translateX(-50%); width:132px; height:146px; background:var(--skin); clip-path:polygon(19% 0,81% 0,95% 31%,83% 100%,17% 100%,5% 31%); }
+.avatar-arm { position:absolute; z-index:1; top:164px; width:31px; height:224px; border-radius:25px; background:var(--skin); transform-origin:top center; }
+.avatar-arm.left { left:77px; transform:rotate(5deg); } .avatar-arm.right { right:77px; transform:rotate(-5deg); }
+.avatar-hand { position:absolute; z-index:1; top:370px; width:31px; height:45px; border-radius:50% 50% 45% 45%; background:var(--skin); }
+.avatar-hand.left { left:88px; } .avatar-hand.right { right:88px; }
+.avatar-leg { position:absolute; z-index:1; top:285px; width:51px; height:237px; background:var(--skin); clip-path:polygon(5% 0,95% 0,74% 100%,24% 100%); }
+.avatar-leg.left { left:calc(50% - 53px); } .avatar-leg.right { right:calc(50% - 53px); }
+.hair { position:absolute; z-index:4; left:50%; transform:translateX(-50%); background:var(--hair); }
+.hair.cap { top:34px; width:91px; height:57px; border-radius:51% 51% 32% 32%; clip-path:polygon(0 0,100% 0,94% 100%,73% 69%,51% 83%,25% 65%,7% 100%); }
+.hair.long { top:40px; width:108px; height:155px; border-radius:48% 48% 36% 36%; clip-path:polygon(6% 0,94% 0,100% 100%,76% 92%,72% 33%,28% 33%,24% 92%,0 100%); z-index:2; }
+.hair.bob { top:37px; width:99px; height:117px; border-radius:48% 48% 39% 39%; clip-path:polygon(5% 0,95% 0,100% 85%,78% 100%,72% 35%,28% 35%,22% 100%,0 85%); z-index:2; }
+.hair.bun { top:18px; width:42px; height:42px; border-radius:50%; z-index:2; }
+.hair.bun + .hair.cap { display:block; }
+.garment { position:absolute; z-index:6; overflow:hidden; background:var(--garment,#dfb8ff); box-shadow:0 7px 14px rgba(60,38,73,.13); border:2px solid rgba(255,255,255,.78); }
+.garment img { width:100%; height:100%; object-fit:cover; display:block; }
+.garment .garment-fallback { width:100%; height:100%; display:grid; place-items:center; font-size:34px; background:linear-gradient(145deg,var(--garment),rgba(255,255,255,.55)); }
+.garment .garment-name { position:absolute; left:50%; bottom:6px; transform:translateX(-50%); max-width:88%; padding:4px 7px; border-radius:8px; background:rgba(45,41,64,.72); color:white; font-size:9px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.garment-top { left:50%; top:148px; transform:translateX(-50%); width:145px; height:153px; clip-path:polygon(18% 0,37% 8%,63% 8%,82% 0,100% 27%,86% 43%,80% 100%,20% 100%,14% 43%,0 27%); }
+.garment-bottom { left:50%; top:286px; transform:translateX(-50%); width:143px; height:220px; clip-path:polygon(7% 0,93% 0,79% 100%,55% 100%,50% 31%,45% 100%,21% 100%); }
+.garment-dress { left:50%; top:148px; transform:translateX(-50%); width:190px; height:365px; clip-path:polygon(24% 0,39% 7%,61% 7%,76% 0,91% 19%,79% 31%,72% 42%,94% 100%,6% 100%,28% 42%,21% 31%,9% 19%); }
+.garment-shoes { left:50%; bottom:24px; transform:translateX(-50%); width:146px; height:56px; display:grid; grid-template-columns:1fr 1fr; gap:15px; background:transparent; border:0; box-shadow:none; overflow:visible; }
+.shoe-piece { overflow:hidden; border-radius:50% 50% 20% 20%; background:var(--garment); border:2px solid rgba(255,255,255,.82); box-shadow:0 5px 10px rgba(60,38,73,.12); }
+.shoe-piece img { width:100%; height:100%; object-fit:cover; }
+.garment-accessory { right:31px; top:272px; width:69px; height:77px; border-radius:22px; transform:rotate(5deg); }
+.empty-garment { position:absolute; z-index:6; left:50%; transform:translateX(-50%); padding:7px 10px; border-radius:12px; background:rgba(255,255,255,.75); color:var(--muted); font-size:10px; font-weight:800; border:1px dashed #d8c9e1; }
+.empty-garment.top { top:195px; } .empty-garment.bottom { top:341px; } .empty-garment.shoes { bottom:42px; }
+.avatar-controls { display:grid; gap:13px; background:white; border:1px solid var(--line); border-radius:26px; padding:17px; }
+.control-group h3 { margin:0 0 9px; font-size:14px; }
+.option-row { display:flex; gap:9px; flex-wrap:wrap; }
+.color-option, .style-option { border:2px solid transparent; background:#f9f6fb; min-width:43px; height:43px; border-radius:14px; font-weight:850; color:var(--ink); }
+.color-option { background:var(--swatch); box-shadow:inset 0 0 0 1px rgba(45,41,64,.1); }
+.color-option.active, .style-option.active { border-color:var(--pink); box-shadow:0 0 0 3px var(--pink-soft); }
+.style-option { padding:0 13px; min-width:auto; }
+.avatar-note { margin:0; padding:12px 14px; border-radius:18px; background:var(--blue-soft); color:var(--muted); font-size:12px; line-height:1.45; }
+.avatar-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.avatar-actions .primary-button { grid-column:1 / -1; }
+@media (max-width:380px) { .mannequin-canvas { transform-origin:top center; } .avatar-arm.left { left:69px; } .avatar-arm.right { right:69px; } }
+
 .hidden { display: none !important; }
 
 @media (min-width: 700px) {
@@ -325,16 +380,23 @@ function seedData() {
     ],
     looks: [],
     schedule: {},
+    avatar: { skin: '#e6b18d', hair: '#4b2f2a', hairStyle: 'long' },
     onboarded: true
   };
 }
 
 function loadData() {
+  const fresh = seedData();
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return saved && saved.items ? saved : seedData();
+    if (!saved || !saved.items) return fresh;
+    return {
+      ...fresh,
+      ...saved,
+      avatar: { ...fresh.avatar, ...(saved.avatar || {}) }
+    };
   } catch {
-    return seedData();
+    return fresh;
   }
 }
 let data = loadData();
@@ -375,13 +437,13 @@ function formatSelectedDate(key) {
 
 function navigate(screen) {
   currentScreen = screen;
-  document.querySelectorAll('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === screen));
+  document.querySelectorAll('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === (screen === 'mannequin' ? 'create' : screen)));
   render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function render() {
-  const screens = { home: renderHome, wardrobe: renderWardrobe, create: renderCreate, calendar: renderCalendar, favorites: renderFavorites };
+  const screens = { home: renderHome, wardrobe: renderWardrobe, create: renderCreate, mannequin: renderMannequin, calendar: renderCalendar, favorites: renderFavorites };
   app.innerHTML = screens[currentScreen]();
   bindScreenEvents();
 }
@@ -471,10 +533,80 @@ function renderCreate() {
           </div>
         </div>
         <div class="builder-actions">
+          <button class="tryon-button" data-view-outfit>🪞 Ver vestuario</button>
           <button class="ghost-button" data-random-look>🎲 Aleatorio</button>
           <button class="secondary-button" data-go="wardrobe">👚 Ver armario</button>
           <button class="primary-button" data-save-look>Guardar este look</button>
         </div>
+      </div>
+    </section>`;
+}
+
+
+function colorHex(name = '') {
+  const colors = {
+    Rosa:'#f6a8c9', Lila:'#b5a0eb', Azul:'#8cbde8', Blanco:'#f7f5f0', Negro:'#343039',
+    Beige:'#d9c2a7', Verde:'#8fbf9c', Rojo:'#c96470', Multicolor:'#caa8ea'
+  };
+  return colors[name] || '#d7b2e8';
+}
+
+function garmentContent(item, fallbackEmoji) {
+  if (!item) return '';
+  const picture = item.image
+    ? `<img src="${item.image}" alt="${escapeHtml(item.name)}">`
+    : `<div class="garment-fallback">${item.emoji || fallbackEmoji}</div>`;
+  return `${picture}<span class="garment-name">${escapeHtml(item.name)}</span>`;
+}
+
+function renderMannequin() {
+  const avatar = data.avatar || { skin:'#e6b18d', hair:'#4b2f2a', hairStyle:'long' };
+  const top = data.items.find(i => i.id === currentLook.top);
+  const bottom = data.items.find(i => i.id === currentLook.bottom);
+  const shoes = data.items.find(i => i.id === currentLook.shoes);
+  const accessory = data.items.find(i => i.id === currentLook.accessory);
+  const isDress = top?.category === 'dresses';
+  const chosenCount = [top,bottom,shoes,accessory].filter(Boolean).length;
+  const skinOptions = ['#f7d7bd','#e6b18d','#bb7d5a','#754633'];
+  const hairOptions = ['#221b1a','#4b2f2a','#8b5a35','#d2a65a','#b86b5e'];
+  const hairStyles = [
+    {key:'long',label:'Largo'}, {key:'bob',label:'Corto'}, {key:'bun',label:'Moño'}
+  ];
+  return `
+    <section class="avatar-page">
+      <div class="avatar-toolbar">
+        <button class="avatar-back" data-go="create">‹ Volver a crear</button>
+        <span class="eyebrow" style="margin:0!important">Vestidor digital</span>
+      </div>
+      <div class="screen-header" style="margin-bottom:0"><div><h2>Ver vestuario</h2><p>${chosenCount ? 'Tu combinación sobre un maniquí ilustrado' : 'Elige prendas para comenzar'}</p></div></div>
+      <div class="avatar-card">
+        <div class="mannequin-canvas" style="--skin:${avatar.skin};--hair:${avatar.hair}">
+          <div class="avatar-shadow"></div>
+          ${avatar.hairStyle === 'long' ? '<div class="hair long"></div>' : ''}
+          ${avatar.hairStyle === 'bob' ? '<div class="hair bob"></div>' : ''}
+          ${avatar.hairStyle === 'bun' ? '<div class="hair bun"></div><div class="hair cap"></div>' : '<div class="hair cap"></div>'}
+          <div class="avatar-ear left"></div><div class="avatar-ear right"></div>
+          <div class="avatar-head"></div><div class="avatar-face"></div><div class="avatar-mouth"></div><div class="avatar-neck"></div>
+          <div class="avatar-torso"></div>
+          <div class="avatar-arm left"></div><div class="avatar-arm right"></div>
+          <div class="avatar-hand left"></div><div class="avatar-hand right"></div>
+          <div class="avatar-leg left"></div><div class="avatar-leg right"></div>
+          ${top ? `<div class="garment ${isDress ? 'garment-dress' : 'garment-top'}" style="--garment:${colorHex(top.color)}">${garmentContent(top,'👚')}</div>` : '<div class="empty-garment top">Falta la parte superior</div>'}
+          ${!isDress && bottom ? `<div class="garment garment-bottom" style="--garment:${colorHex(bottom.color)}">${garmentContent(bottom,'👖')}</div>` : (!isDress ? '<div class="empty-garment bottom">Falta la parte inferior</div>' : '')}
+          ${shoes ? `<div class="garment-shoes" style="--garment:${colorHex(shoes.color)}"><div class="shoe-piece">${shoes.image ? `<img src="${shoes.image}" alt="${escapeHtml(shoes.name)}">` : `<div class="garment-fallback">👟</div>`}</div><div class="shoe-piece">${shoes.image ? `<img src="${shoes.image}" alt="${escapeHtml(shoes.name)}">` : `<div class="garment-fallback">👟</div>`}</div></div>` : '<div class="empty-garment shoes">Faltan zapatos</div>'}
+          ${accessory ? `<div class="garment garment-accessory" style="--garment:${colorHex(accessory.color)}">${garmentContent(accessory,'👜')}</div>` : ''}
+        </div>
+      </div>
+      <div class="avatar-controls">
+        <div class="control-group"><h3>Tono de piel</h3><div class="option-row">${skinOptions.map(c => `<button class="color-option ${avatar.skin===c?'active':''}" style="--swatch:${c}" data-avatar-skin="${c}" aria-label="Elegir tono de piel"></button>`).join('')}</div></div>
+        <div class="control-group"><h3>Color de cabello</h3><div class="option-row">${hairOptions.map(c => `<button class="color-option ${avatar.hair===c?'active':''}" style="--swatch:${c}" data-avatar-hair="${c}" aria-label="Elegir color de cabello"></button>`).join('')}</div></div>
+        <div class="control-group"><h3>Peinado</h3><div class="option-row">${hairStyles.map(h => `<button class="style-option ${avatar.hairStyle===h.key?'active':''}" data-avatar-style="${h.key}">${h.label}</button>`).join('')}</div></div>
+      </div>
+      <p class="avatar-note">Esta vista es una ilustración para comparar colores y combinaciones. La posición y el ajuste real de las prendas pueden verse distintos al usarlas.</p>
+      <div class="avatar-actions">
+        <button class="ghost-button" data-go="create">Cambiar prendas</button>
+        <button class="secondary-button" data-random-look>🎲 Otro look</button>
+        <button class="primary-button" data-save-look>Guardar este look</button>
       </div>
     </section>`;
 }
@@ -552,12 +684,23 @@ function bindScreenEvents() {
   document.querySelectorAll('[data-random-look]').forEach(el => el.addEventListener('click', randomizeLook));
   document.querySelectorAll('[data-clear-look]').forEach(el => el.addEventListener('click', () => { currentLook = { top:null,bottom:null,shoes:null,accessory:null }; render(); }));
   document.querySelectorAll('[data-save-look]').forEach(el => el.addEventListener('click', saveCurrentLook));
+  document.querySelectorAll('[data-view-outfit]').forEach(el => el.addEventListener('click', () => navigate('mannequin')));
+  document.querySelectorAll('[data-avatar-skin]').forEach(el => el.addEventListener('click', () => updateAvatar('skin', el.dataset.avatarSkin)));
+  document.querySelectorAll('[data-avatar-hair]').forEach(el => el.addEventListener('click', () => updateAvatar('hair', el.dataset.avatarHair)));
+  document.querySelectorAll('[data-avatar-style]').forEach(el => el.addEventListener('click', () => updateAvatar('hairStyle', el.dataset.avatarStyle)));
   document.querySelectorAll('[data-calendar-prev]').forEach(el => el.addEventListener('click', () => { calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth()-1,1); render(); }));
   document.querySelectorAll('[data-calendar-next]').forEach(el => el.addEventListener('click', () => { calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth()+1,1); render(); }));
   document.querySelectorAll('[data-date]').forEach(el => el.addEventListener('click', () => { selectedDate = el.dataset.date; render(); }));
   document.querySelectorAll('[data-assign-look]').forEach(el => el.addEventListener('click', assignLook));
   document.querySelectorAll('[data-delete-look]').forEach(el => el.addEventListener('click', () => deleteLook(el.dataset.deleteLook)));
   document.querySelectorAll('[data-use-look]').forEach(el => el.addEventListener('click', () => useLook(el.dataset.useLook)));
+}
+
+
+function updateAvatar(key, value) {
+  data.avatar = { ...(data.avatar || {}), [key]: value };
+  saveData();
+  render();
 }
 
 function toggleFavorite(id) {
@@ -578,7 +721,8 @@ function randomizeLook() {
     const options = data.items.filter(i => slot.categories.includes(i.category));
     currentLook[slot.key] = options.length ? options[Math.floor(Math.random()*options.length)].id : null;
   });
-  currentScreen = 'create';
+  const stayInMannequin = currentScreen === 'mannequin';
+  currentScreen = stayInMannequin ? 'mannequin' : 'create';
   document.querySelectorAll('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === 'create'));
   render(); showToast('¡Nueva combinación creada!');
 }
